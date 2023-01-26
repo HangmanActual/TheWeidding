@@ -1,0 +1,702 @@
+* {
+    box-sizing: border-box;
+} 
+
+body {
+    margin: 0;
+    background: rgb(253, 248, 245);
+    overflow-x: hidden; /*Hides horizontal scrollbar*/
+}
+
+/*
+// Make body scrollbar more visually appealing.
+body::-webkit-scrollbar {width: 15px;}
+body::-webkit-scrollbar-track {background: rgb(68, 68, 68);}
+body::-webkit-scrollbar-thumb {background: rgb(111, 111, 111);}
+*/
+/*======================================= BEGIN: Header =======================================*/
+header {
+    position: relative;
+    background: rgba(244,227,215,255);
+    height: 100vh; /*Creates a cover page*/
+    width: 100vw;
+    /*
+    // Flexbox added to position navbar at bottom without using position.
+    */
+}
+
+#header-cover-container { 
+    position: relative;
+    width: 100vw;
+    height: 80%; 
+    margin: 0;
+    overflow: hidden;
+    /*
+    // Position and top added in revE cz header changed to flexbox and align-items: flex-end.
+    */
+} 
+
+.header-pic {
+    width: 100%;
+}
+
+#cover-pic-container-JK {
+    position: absolute;
+    top: 0;
+    height: calc(100vw - 32%);
+    overflow: hidden;
+    z-index: 9;
+    /*
+    // z-index: 9 to appear on top of Cleo
+    */
+}
+
+#cover-pic-container-Cleo {
+    position: absolute;
+    bottom: 5px;
+    height: 70%;
+    overflow: hidden;
+    z-index: 8;
+    /*
+    Positions Cleo container relative to JK container.
+    */
+}
+
+#cover-pic-Cleo {
+    margin-top: 13%;
+    /*
+    // Positions Cleo within container.
+    */
+}
+
+/*========== BEGIN: Cover page text ==========*/
+.header-text-container {
+    position: absolute;
+    top: 0;
+    left: 3%;
+    width: 45%;
+    height: min(100%, calc(100vw - 32%));
+    z-index: 10;
+    /*
+    // Z-index: 10 to appear on top of header pics.
+    */
+} 
+
+.header-title {
+    text-align: center;
+    margin: 20% 0 0 0;
+    font-family: 'Rochester', cursive;
+    font-size: min(8vw, 4rem);
+}
+
+.header-subtitle {
+    text-align: center;
+    font-family: 'Rochester', cursive;
+    margin: 0;
+}
+
+#subtitle-location-and-time {
+    font-size: min(4vw, 1.75rem);
+    margin: 0;
+}
+
+#subtitle-adventure {
+    font-size: min(5vw, 2rem);
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    margin: 0;
+} 
+/*========== END: Cover page text ==========*/
+/*========== BEGIN: Slideshow ==========*/
+#adventure-slideshow-container {
+    position: absolute;
+    bottom: 5%;
+    height: min(max(80px, 20%), 125px);
+    width: 100%;
+    overflow: visible;
+    z-index: 10;
+/*
+// Parent uses 100vh and 100vw.
+*/
+}
+
+#adventure-pics-slideshow {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/*
+.adventure-pics-slideshow-intermediary {
+    Not sure why this is necessary to allow slideshow to slide.
+}
+*/
+
+.adventure-pics-container {
+    height: 100%;
+    display: flex;
+    animation: slideshow 30s linear infinite;
+    position: relative;
+    /*
+    position: relative;
+    z-index: 10;
+    // Last pic was covering first pic.
+    // Position:relative moved to #adventure-pics-slideshow.
+    */
+}
+
+.adventure-pic {
+    height: 100%;
+    transition: transform 0.2s;
+}
+
+@keyframes slideshow {
+    0%  {left: 0;}
+    100% {left: -100%;}
+}
+
+#adventure-slideshow-container:hover  .adventure-pics-container {
+    animation-play-state: paused;
+}
+
+.f1st-container:hover, .s2nd-container:hover {
+    z-index: 11;
+    /*
+    // Otherwise, the other container covers last picture.
+    */
+}
+
+.adventure-pic:hover {
+    transform: scale(1.3) translate(0, -11%);
+    /*
+    // translate to make it seem like pic's bottom is fixed
+    */
+}
+/*========== END: Slideshow ==========*/
+/*========== BEGIN: Navbar ==========*/
+.navbar-container {
+    width: 100vw;
+    min-width: 600px;
+    height: 5%;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(55, 55, 55);
+    opacity: 1;
+    position: sticky;
+    top: -1;
+    margin-top: -5vh;
+    z-index: 100;
+    /*
+    // margin-top:-5vh because height:5% based off of header's height:100vh.
+    */
+}
+
+navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0;
+}
+
+.navlink, .navlink:visited {
+    color: white;
+    text-decoration: none;
+    font-family: 'Gill Sans MT';
+    font-size: 1.2rem;
+}
+
+.navlink:hover {
+    color: pink;
+}
+/*========== END: Navbar ==========*/
+/*======================================= END: Header =======================================*/
+/*======================================= BEGIN: General =======================================*/
+.section-title {
+    text-align: center;
+    font-family: 'Rochester', cursive;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    position: relative;
+    z-index: 10;
+    margin: 30px 0 10px 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-family: 'Rochester', cursive;
+    margin: 0 auto 0 auto;
+}
+
+.anchor {
+    position: relative;
+    top: -50px;
+}
+
+.section {
+    position: relative;
+    top: 20vh;
+    margin: 0 auto;
+    z-index: 9;
+}
+
+h2, h3, p {
+    position: relative;
+    z-index: 10;
+}
+/*======================================= END: General =======================================*/
+main {
+    position: relative;
+}
+
+#main-background-pic-container {
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 8;
+}
+
+#main-background-pic {
+    width: 100%;
+    height: 100%;
+}
+/*======================================= BEGIN SECTION: Our Story =======================================*/
+/*
+// Clean up this section's nesting sequence
+*/
+#anchor-Our-Story {
+    position: absolute;
+    top: -30px;
+}
+
+#section-Our-Story {
+    position: absolute;
+    top: 5vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+#section-title-our-story {
+    position: relative;
+    z-index: 11;
+}
+
+#our-story-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+}
+
+#our-story-subcontainer {
+    width: min(75%, 900px);
+
+    position: relative;
+    top: 13%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+#our-story-subcontainer::-webkit-scrollbar {width: 10px;}
+#our-story-subcontainer::-webkit-scrollbar-track {background: rgb(158, 158, 158);}
+#our-story-subcontainer::-webkit-scrollbar-thumb {background: rgb(207, 205, 205);}
+
+.our-story {
+    position: relative;
+    z-index: 12;
+    font-size: max(1rem, 1.5vw);
+    font-family: sans-serif;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+/*
+//===== BEGIN 2023.01.25
+// Below code works, but elements have bad nesting sequences.
+// Changing one part of the code messed up everything else.
+// Need to fix nesting sequence before re-implementing.
+
+#our-story-pic-container {
+    position: relative;
+    top: -10%;
+    z-index: 9;
+    height: 90%;
+    width: min(85%, 1100px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#our-story-pic-subcontainer {
+    border: 1px solid blue;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#our-story-pic {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#our-story-text-background {
+    border-radius: 15px;
+    position: absolute;
+    height: 50%;
+    width: min(80%, 1000px);
+    top: 3%;
+    left: 10%;
+    background: white;
+    opacity: 0.75;
+    z-index: 11;
+}
+//===== END 2023.01.25
+/*======================================= END SECTION: Our Story =======================================*/
+/*======================================= BEGIN SECTION: "The Weidding Party" =======================================*/
+#section-weidding-party {
+    border: 1px ;
+    position: relative;
+    top: 20vh;
+}
+
+#anchor-Weidding-Party {
+    position: absolute;
+    top: -60px;
+}
+
+#section-title-Weidding-Party {
+    font-size: 2rem;
+    margin: 5px 0 10px 0;
+}
+
+.section-title-background {
+    position: absolute;
+    border-radius: 15px;
+    background: white;
+    opacity: 0.75;
+    height: 70px;
+    width: 40%;
+    top: -10px;
+    left: 30%;
+    z-index: 5;
+}
+
+/*===== BEGIN: Wedding Party Profiles Grid =====*/
+.flexbox-container { 
+    position: relative;
+    width: min(80%, 1000px);
+    height: min(calc(80vw * 4 / 6.5), calc(950px * 4 / 6.5));
+    margin: 0 auto 5% auto;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    z-index: 10;
+    /*
+    // Width and height got a bit complex to keep everything visible during full screen.
+    // Height based on width to maintain aspect ratio.
+    */
+}
+
+.profile {
+    width: 25%;
+    height: 33.33%;
+}
+
+.profile-pic-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.profile-pic {
+    display: inline-block;
+    /*
+    // Positioned profile pics with margin because position: relative causes downstream pics to cover upstream pics.
+    */
+}
+
+#Joe-profile-pic {
+    width: 100%;
+    margin: -7% 0 0 0;
+}
+
+#Emily-profile-pic{
+    width: 100%;
+    margin: -25% 0 0 0;
+}
+
+#Jacob-profile-pic{
+    width: 100%;
+    margin: -7% 0 0 0;
+}
+
+#Kerri-profile-pic{
+    width: 100%;
+}
+
+#Josh-profile-pic{
+    width: 180%;
+    margin: -30% 0 0 -45%;
+}
+
+#Victoria-profile-pic{
+    width: 100%;
+    margin: -14% 0 0 0;
+}
+
+#Will-profile-pic{
+    width: 120%;
+    margin: -40% 0 0 -6%;
+}
+
+#Meng-profile-pic{
+    width: 110%;
+    margin: -45% 0 0 0;
+}
+
+#Jane-profile-pic{
+    width: 180%;
+    margin: -45% 0 0 -40%;
+}
+
+#Mona-profile-pic{
+    width: 100%;
+    margin: -3% 0 0 0;
+}
+
+#Kan-profile-pic{
+    width: 170%;
+    margin: -22% 0 0 -35%;
+}
+
+#Cleo-profile-pic{
+    width: 120%;
+    margin: -22% 0 0 -10%;
+}
+
+.profile-bio {
+    color: white;
+    font-size: min(max(16px, 2vw), 22px);
+    font-family: Trebuchet MS, serif;
+    margin: 0;
+}
+
+.profile-bio-container {
+    display: none;
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    height: 90%;
+    width: 45%;
+    overflow: auto;
+    /*
+    Display: none while unclicked.
+    */
+}
+
+.profile-bio-container::-webkit-scrollbar {width: 10px;}
+.profile-bio-container::-webkit-scrollbar-track {background: rgb(68, 68, 68);}
+.profile-bio-container::-webkit-scrollbar-thumb {background: rgb(111, 111, 111);}
+
+/*===== END: Wedding Party Profiles Grid =====*/
+/*===== BEGIN: Expandable Profile Grid =====*/
+.profile:hover {
+    overflow: visible;
+    z-index: 9;
+    /*
+    // overflow: visible prevents enlarged pic from being blocked by neighbors.
+    // z-index: 9 prevents bottom rows from blocking upper rows.
+    // Upon hover release, however, pics are blocked from right and bottom (FIXED).
+    */
+}
+
+.profile-pic-container {
+    transition: transform 0.2s;
+    /*
+    // Bottom rows block upper rows upon release of hover (FIXED)
+    */
+}
+
+.profile-pic-container:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+input {
+    display: none;
+    /*
+    // Hides checkbox.
+    */
+}
+
+input:checked + label .expansion-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    background: rgb(31, 30, 30);
+    opacity: 0.97;
+    z-index: 10;
+    /*
+    // .expandion-div is the backdrop for the pic and bio.
+    // Sized to a grid until clicked, which expands to fill .flexbox-container.
+    // .flexbox-container is the closest ancestor with a defined position
+    */
+}
+
+input:checked + label .profile-pic-container {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    height: 90%;
+    width: 45%;
+    opacity: 1;
+    z-index: 10;
+    transition: transform 0s;
+    /*
+    // transition: transform 0s; fixes checked pic from instant rescale upon hover release.
+    */
+}
+
+input:checked + label .profile-pic-container:hover {
+    transform: scale(1);
+    cursor: default;
+    /*
+    // transform: scale(1) fixes pic enlarging on hover when container expanded.
+    */
+}
+
+input:checked + label .profile-pic {
+    height: 100%;
+    margin-top: 0 !important;
+    object-fit: cover;
+}
+
+input:checked + label .profile-bio-container {
+    display: initial;
+}
+/*===== END: Expandable Profile Grid =====*/
+/*======================================= END SECTION: "The Weidding Party" =======================================*/
+/*======================================= BEGIN SECTION: Weidding Day =======================================*/
+#schedule-container {
+    /*
+    width: min(80%, 1000px);
+    */
+    width: 80%;
+    margin: 0 auto;
+}
+
+.grid-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-subcontainer {
+    display: grid;
+    /*
+    grid-template-columns:32% max(10%, 60px) 15px max(30%, 180px) 1fr;
+    margin-left: 35%;
+    */
+    grid-template-columns: max(10%, 60px) 15px max(30%, 180px);
+    margin: 0 auto;
+    width: 150px;
+    position: relative;
+}
+
+.grid-subcontainer-text {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.grid-subcontainer-left {
+    text-align: right;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    position: relative;
+    z-index: 10;
+}
+
+.grid-subcontainer-right {
+    text-align: left;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    position: relative;
+    z-index: 10;
+}
+
+.grid-subcontainer-middle {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.text-background-container {
+    border-radius: 15px;
+    position: absolute;
+    height: 110%;
+    width: 80%;
+    top: -5%;
+    left: 10%;
+    background: white;
+    opacity: 0.75;
+    z-index: 5;
+    /*
+    // Currently manually controlled width.
+    // Consider having page-wide backgrounds for easier control.
+    */
+}
+
+#menu {
+    margin-top: 3%;
+}
+/*======================================= END SECTION: Weidding Day =======================================*/
+/*======================================= BEGIN SECTION: Transportation =======================================*/
+#section-transportation {
+    margin-top: 42px;
+}
+
+.transportation-text-container {
+    width: 100%;
+}
+
+.transportation-text {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.taxis-container {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+#taxis-text {
+    margin: 0 auto;
+}
+
+#taxis-subtitle {
+    margin-top: 3%;
+}
+/*======================================= END SECTION: Transportation =======================================*/
+/*======================================= BEGIN SECTION: Maui =======================================*/ 
+
+/*======================================= END SECTION: Maui =======================================*/
+/*======================================= BEGIN: Footer =======================================*/
+footer {
+    border: 1px solid blue;
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+}
+/*======================================= END: Footer =======================================*/
