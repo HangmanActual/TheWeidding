@@ -277,7 +277,7 @@ h2, h3, p {
 /*======================================= BEGIN SECTION: Our Story =======================================*/
 #anchor-Our-Story {
     position: absolute;
-    top: -30px;
+    top: -35px;
 }
 
 #section-Our-Story {
@@ -334,26 +334,30 @@ h2, h3, p {
 .our-story {
     position: relative;
     z-index: 12;
-    font-size: max(1rem, 1.5vw);
+    font-size: max(1rem, 1.25vw);
     font-family: sans-serif;
     margin: 0 auto;
     max-height: 100%;
 }
 
 #our-story-pic-container {
-    border-radius: 10px;
     position: relative;
     top: 15px;
     margin: 0 auto;
     width: min(90%, 1000px);
     height: 90%;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+#our-story-pic-subcontainer {
+    display: inline-block;
+    border-radius: 15px;
     overflow: hidden;
 }
 
 #our-story-pic {
-    display: block;
-    margin: 0 auto;
     height: 100%;
 }
 /*======================================= END SECTION: Our Story =======================================*/
