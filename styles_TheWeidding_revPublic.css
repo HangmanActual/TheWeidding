@@ -663,7 +663,7 @@ input:checked + label .profile-bio-container {
     height: 110%;
     width: 70%;
     top: -5%;
-    left: 10%;
+    left: 15%;
     background: white;
     opacity: 0.75;
     z-index: 5;
