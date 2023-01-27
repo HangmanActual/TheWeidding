@@ -112,6 +112,10 @@ header {
     font-size: min(8vw, 4rem);
 }
 
+#JK-subtitle {
+    font-size: min(4vw, 1.75rem);
+}
+
 .header-subtitle {
     text-align: center;
     font-family: 'Rochester', cursive;
@@ -288,7 +292,10 @@ h2, h3, p {
 }
 
 .combo-container {
+    /*
     width: max(500px, min(80%, 900px));
+    */
+    width: min(85%, 900px);
     position: relative;
     margin: 0 auto;
 }
@@ -593,6 +600,11 @@ input:checked + label .profile-bio-container {
     margin-top: 50px;
 }
 
+.section-subtitle {
+    font-size: 1.6rem;
+    margin: 0 0 7.5px 0;
+}
+
 #schedule-container {
     /*
     width: min(80%, 1000px);
@@ -649,7 +661,7 @@ input:checked + label .profile-bio-container {
     border-radius: 15px;
     position: absolute;
     height: 110%;
-    width: 80%;
+    width: 70%;
     top: -5%;
     left: 10%;
     background: white;
@@ -667,7 +679,7 @@ input:checked + label .profile-bio-container {
 /*======================================= END SECTION: Weidding Day =======================================*/
 /*======================================= BEGIN SECTION: Transportation =======================================*/
 #section-transportation {
-    margin-top: 42px;
+    margin-top: 50px;
 }
 
 .transportation-text-container {
@@ -693,9 +705,62 @@ input:checked + label .profile-bio-container {
     margin-top: 3%;
 }
 /*======================================= END SECTION: Transportation =======================================*/
-/*======================================= BEGIN SECTION: Maui =======================================*/ 
+/*======================================= BEGIN SECTION: Questions =======================================*/ 
+/*
+// This sections height based on manual adjustment.
+// Would be better to make it automatic.
+*/
+#section-questions {
+    position: relative;
+    height: calc(100vh - 16vw);
+    margin-top: 50px;
+}
 
-/*======================================= END SECTION: Maui =======================================*/
+.section-title {
+    position: relative;
+    z-index: 11;
+}
+
+#questions-section-container {
+    border-radius: 15px;
+    position: absolute;
+    height: 94%;
+    width: 80%;
+    top: -5px;
+    left: 10%;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+#questions-section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    opacity: 0.75;
+    z-index: 5;
+}
+
+.questions-container {
+    width: 95%;
+    position: absolute;
+    left: 2.5%;
+    height: 80%;
+    top: 55px;
+}
+
+.questions-subtitle {
+    text-align: left;
+    margin: 0 0 5 0;
+}
+
+.answer {
+    margin: 0 0 20 0;
+    font-family: sans-serif;
+}
+/*======================================= END SECTION: Questions =======================================*/
 /*======================================= BEGIN: Faux Footer =======================================*/
 /*
 #section-footer {
