@@ -92,6 +92,19 @@ header {
     */
 }
 
+@media screen
+and (max-width: 480px) {
+    #cover-pic-container-JK {
+        height: 100%;
+    }
+
+    .header-pic {
+        height: 100%;
+        width: auto;
+        position: relative;
+        left: -40%;
+    }
+}
 /*========== BEGIN: Cover page text ==========*/
 .header-text-container {
     position: absolute;
@@ -104,6 +117,48 @@ header {
     // Z-index: 10 to appear on top of header pics.
     */
 } 
+
+#header-title-background {
+    border-radius: 15px;
+    position: absolute;
+    height: 25%;
+    width: 60%;
+    top: -2%;
+    left: 20%;
+    background: white;
+    opacity: 0.75;
+    z-index: 5;
+    display: none;
+}
+
+#header-subtitle-background {
+    border-radius: 15px;
+    position: absolute;
+    height: 12%;
+    width: 60%;
+    bottom: 3%;
+    left: 20%;
+    background: white;
+    opacity: 0.75;
+    z-index: 5;
+    display: none;
+}
+
+@media screen
+and (max-width: 480px) {
+    .header-text-container {
+        position: relative;
+        top: 15%;
+        left: 0;
+        height: 65%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #header-title-background, #header-subtitle-background {
+        display: initial;
+    }
+}
 
 .header-title {
     text-align: center;
@@ -273,7 +328,7 @@ navbar {
     z-index: 9;
 }
 
-h2, h3, p {
+h1, h2, h3, p {
     position: relative;
     z-index: 10;
 }
@@ -367,12 +422,27 @@ h2, h3, p {
 #our-story-pic {
     height: 100%;
 }
+
+@media screen
+and (max-width: 480px) {
+    #our-story-pic {
+        position: relative;
+        left: -75%;
+    }
+}
 /*======================================= END SECTION: Our Story =======================================*/
 /*======================================= BEGIN SECTION: "The Weidding Party" =======================================*/
 #section-weidding-party {
     border: 1px ;
     position: relative;
     top: 0;
+}
+
+@media screen
+and (max-width: 480px) {
+    #section-weidding-party {
+        height: 1200px;
+    }
 }
 
 #anchor-Weidding-Party {
@@ -416,6 +486,19 @@ h2, h3, p {
 .profile {
     width: 25%;
     height: 33.33%;
+}
+
+@media screen
+and (max-width: 480px) {
+    .flexbox-container {
+        width: 100%;
+        height: 550px;
+    }
+
+    .profile {
+        width: 50%;
+        height: min(calc(65vw * 4 / 6.5), calc(950px * 4 / 6.5));
+    }
 }
 
 .profile-pic-container {
@@ -716,6 +799,13 @@ input:checked + label .profile-bio-container {
     margin-top: 50px;
 }
 
+@media screen
+and (max-width: 480px) {
+    #section-questions {
+        height: 96vh;
+    }
+}
+
 .section-title {
     position: relative;
     z-index: 11;
@@ -730,6 +820,14 @@ input:checked + label .profile-bio-container {
     left: 10%;
     z-index: 10;
     overflow-y: auto;
+}
+
+@media screen
+and (max-width: 480px) {
+    #questions-section-container {
+        width: 90%;
+        left: 5%;
+    }
 }
 
 #questions-section-background {
