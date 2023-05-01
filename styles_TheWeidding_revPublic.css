@@ -282,15 +282,17 @@ main {
 navbar {
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 95%;
     margin: 0;
+    position: relative;
+    left: -1%;
 }
 
 .navlink, .navlink:visited {
     color: white;
     text-decoration: none;
     font-family: 'Gill Sans MT';
-    font-size: 1.2rem;
+    font-size: 1.05rem;
 }
 
 .navlink:hover {
