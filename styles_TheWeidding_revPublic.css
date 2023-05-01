@@ -250,7 +250,7 @@ and (max-width: 480px) {
 }
 
 .adventure-pic:hover {
-    transform: scale(1.3) translate(0, -11%);
+    transform: scale(3) translate(0, -32%);
     /*
     // translate to make it seem like pic's bottom is fixed
     */
@@ -292,11 +292,18 @@ navbar {
     color: white;
     text-decoration: none;
     font-family: 'Gill Sans MT';
-    font-size: 1.05rem;
+    font-size: 1.2rem;
 }
 
 .navlink:hover {
     color: pink;
+}
+
+@media screen
+and (max-width: 800px) {
+    .navlink {
+        font-size: 1.05rem;
+    }
 }
 /*========== END: Navbar ==========*/
 /*======================================= END: Header =======================================*/
