@@ -369,7 +369,7 @@ h1, h2, h3, p {
 
 #our-story-container {
     position: absolute;
-    top: 20px;
+    top: 30px;
     width: 100%;
     height: max(250px, 90%);
     z-index: 12;
@@ -417,6 +417,7 @@ h1, h2, h3, p {
     display: inline-block;
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
 }
 
 #our-story-pic {
@@ -424,12 +425,16 @@ h1, h2, h3, p {
 }
 
 @media screen
-and (max-width: 480px) {
+and (max-width: 800px) {
     #our-story-pic {
         position: relative;
-        left: -75%;
+        left: calc(100vw - 800px);
+        /*800px from the left is just about where my shoulder is. If user minimizes
+          the window past 800px, then calc(100vw - 800px) allows the picture to shift
+          by exactly the same amount so that my shoulder stays in view.*/
     }
 }
+
 /*======================================= END SECTION: Our Story =======================================*/
 /*======================================= BEGIN SECTION: "The Weidding Party" =======================================*/
 #section-weidding-party {
