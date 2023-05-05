@@ -13,6 +13,7 @@ body {
 }
 
 /*===== BEGIN: Background Image =====*/
+/*This is the background image for the entire site.*/
 #body-background-pic-container {
     position: sticky;
     left: 0;
@@ -53,8 +54,11 @@ header {
 }
 
 #header-cover-container { 
+    /*Contains JK pic and Cleo pic easter egg.*/
+    border: none;
     position: relative;
     width: 100vw;
+    /*Height of 80% meant to end container above slideshow.*/
     height: 80%; 
     margin: 0;
     overflow: hidden;
@@ -106,15 +110,17 @@ and (max-width: 480px) {
         height: 100%;
         width: auto;
         position: relative;
-        left: -38%;
+        left: -300px;
     }
 }
 /*========== BEGIN: Cover page text ==========*/
 .header-text-container {
-    position: absolute;
-    top: 0;
-    left: 3%;
-    width: 45%;
+    /*Contains both title and subtitle*/
+    /*Why does adding a border mess up all the formatting?*/
+    border: none;
+    bottom: 0;
+    left: 1%;
+    width: 50%;
     height: min(100%, calc(100vw - 32%));
     z-index: 10;
     /*
@@ -122,85 +128,132 @@ and (max-width: 480px) {
     */
 } 
 
-#header-title-background {
-    border-radius: 15px;
-    position: absolute;
-    height: 25%;
-    width: 60%;
-    top: -2%;
-    left: 20%;
-    background: white;
-    opacity: 0.75;
-    z-index: 5;
-    display: none;
-}
-
-#header-subtitle-background {
-    border-radius: 15px;
-    position: absolute;
-    height: 12%;
-    width: 60%;
-    bottom: 3%;
-    left: 20%;
-    background: white;
-    opacity: 0.75;
-    z-index: 5;
-    display: none;
-}
-
-@media screen
-and (max-width: 480px) {
-    .header-text-container {
-        position: relative;
-        top: 5%;
-        left: 0;
-        height: 65%;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    #header-title-background, #header-subtitle-background {
-        display: initial;
-    }
-}
-
-.header-title-container {
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 150px;
-}
-
-.header-title {
+.header-text {
     text-align: center;
     margin: 0 0 0 0;
     font-family: 'Rochester', cursive;
-    font-size: min(8vw, 4rem);
 }
 
-#JK-subtitle {
-    font-size: min(4vw, 1.75rem);
+:root {
+    /*HTTC = header-top-text-container*/
+    --HTTC-width: 50%;
+    --HTTC-left: calc((100vw - var(--HTTC-width)) / 2);
+    /*HTTB = header-top-text-background*/
+    --HTTB-height: 95%;
+    --HTTB-width: max(60%, 200px);
+    --HTTB-top: calc((100% - var(--HTTB-height)) / 2);
+    --HTTB-left: calc((100% - var(--HTTB-width)) / 2);
 }
 
-.header-subtitle {
-    text-align: center;
-    font-family: 'Rochester', cursive;
-    margin: 0;
-}
+    #header-top-text-container {
+        border: none;
+        width: var(--HTTC-width);
+        height: 100px;
+        position: absolute;
+        top: 50px;
+        left: 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-#subtitle-location-and-time {
-    font-size: min(4vw, 1.75rem);
-    margin: 0;
-}
+    /*
+        width: 50%;
+        height: 50px;
+        position: absolute;
+        top: min(88%, 69vh);
+        left: 1%;
+    */
 
-#subtitle-adventure {
-    font-size: min(5vw, 2rem);
-    width: 100%;
-    position: absolute;
-    bottom: 5%;
-    margin: 0;
-} 
+        #header-top-text-background {
+            border: none;
+            /*Don't forget to set position of parent element*/
+            position: absolute;
+            border-radius: 15px;
+            height: var(--HTTB-height);
+            width: var(--HTTB-width);
+            top: var(--HTTB-top);
+            left: var(--HTTB-left);
+            background: white;
+            opacity: 0.75;
+            z-index: 5;
+            display: none;
+        }
+
+        #header-title {
+            /*Largest size is 4rem, smallest is 30px, 8vw scaled sizing inbetween.*/
+            font-size: max(min(4rem, 8vw), 35px);
+        }
+
+        #header-subtitle-JK {
+            font-size: max(min(1.9rem, 4.2vw), 18px);
+        }
+
+    :root {
+        /*HBTC = header-bottom-text-container*/
+        --HBTC-width: 50%;
+        --HBTC-left: calc((100vw - var(--HBTC-width)) / 2);
+        /*HBTB = header-bottom-text-background*/
+        --HBTB-height: 65%;
+        --HBTB-width: max(60%, 200px);
+        --HBTB-top: calc((100% - var(--HBTB-height)) / 2);
+        --HBTB-left: calc((100% - var(--HBTB-width)) / 2);
+    }
+
+    #header-bottom-text-container {
+        border: none;
+        width: var(--HBTC-width);
+        height: 50px;
+        position: absolute;
+        /*Stays with JK-pic (88%) until the pic extends past the slideshow (69vh)*/
+        top: min(88%, 69vh);
+        left: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        #header-bottom-text-background {
+            border-radius: 15px;
+            position: absolute;
+            height: var(--HBTB-height);
+            width: var(--HBTB-width);
+            top: var(--HBTB-top);
+            left: var(--HBTB-left);
+            background: white;
+            opacity: 0.75;
+            z-index: 5;
+            display: none;
+        }
+
+        #subtitle-adventure {
+            font-size: max(min(1.9rem, 4.2vw), 18px);
+        } 
+
+        /* Not shown for privacy.
+        #subtitle-location-and-time {
+            font-size: min(4vw, 1.75rem);
+            margin: 0;
+        }
+        */
+
+@media screen
+and (max-width: 480px) {
+
+    #header-top-text-container {
+        top: 180px;
+        left: var(--HTTC-left);
+    }
+
+    #header-bottom-text-container {
+        left: var(--HBTC-left);
+    }
+
+    #header-top-text-background, #header-bottom-text-background {
+        display: initial;
+    }
+}
 /*========== END: Cover page text ==========*/
 /*========== BEGIN: Slideshow ==========*/
 #adventure-slideshow-container {
@@ -315,6 +368,12 @@ navbar {
 and (max-width: 800px) {
     .navlink {
         font-size: 1.05rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navlink {
+        font-size: 1rem;
     }
 }
 /*========== END: Navbar ==========*/
