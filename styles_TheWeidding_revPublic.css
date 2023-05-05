@@ -104,13 +104,17 @@ header {
 and (max-width: 480px) {
     #cover-pic-container-JK {
         height: 100%;
+        width: 100vw;
     }
 
     .header-pic {
         height: 100%;
         width: auto;
+        float: right;
+        /*
         position: relative;
-        left: -300px;
+        left: -75vw;
+        */
     }
 }
 /*========== BEGIN: Cover page text ==========*/
