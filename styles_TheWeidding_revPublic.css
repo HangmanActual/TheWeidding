@@ -197,7 +197,7 @@ and (max-width: 480px) {
 
     :root {
         /*HBTC = header-bottom-text-container*/
-        --HBTC-width: 50%;
+        --HBTC-width: 60%;
         --HBTC-left: calc((100vw - var(--HBTC-width)) / 2);
         /*HBTB = header-bottom-text-background*/
         --HBTB-height: 65%;
@@ -209,7 +209,7 @@ and (max-width: 480px) {
     #header-bottom-text-container {
         border: none;
         width: var(--HBTC-width);
-        height: 50px;
+        height: 60px;
         position: absolute;
         /*Stays with JK-pic (88%) until the pic extends past the slideshow (69vh)*/
         top: min(88%, 69vh);
@@ -1003,5 +1003,14 @@ and (max-width: 480px) {
     text-align: center;
     font-family: sans-serif;
     font-size: 0.9rem;
+}
+
+#JWP, #JWP:visited {
+    color: black;
+    text-decoration: none;
+}
+
+#JWP:hover {
+    color: pink;
 }
 /*======================================= END: Body Footer =======================================*/
